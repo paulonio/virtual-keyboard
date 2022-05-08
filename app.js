@@ -1,73 +1,270 @@
 const data = [ 
-    {value: '`'},
-    {value: '1'},
-    {value: '2'},
-    {value: '3'},
-    {value: '4'},
-    {value: '5'},
-    {value: '6'},
-    {value: '7'},
-    {value: '8'},
-    {value: '9'},
-    {value: '0'},
-    {value: '-'},
-    {value: '='},
-    {value: 'Backspace'},
-    {value: 'Tab'},
-    {value: 'Q'},
-    {value: 'W'},
-    {value: 'E'},
-    {value: 'R'},
-    {value: 'T'},
-    {value: 'Y'},
-    {value: 'U'},
-    {value: 'I'},
-    {value: 'O'},
-    {value: 'P'},
-    {value: '['},
-    {value: ']'},
-    {value: '\u005C'},
-    {value: 'DEL'},
-    {value: 'Caps Lock'},
-    {value: 'A'},
-    {value: 'S'},
-    {value: 'D'},
-    {value: 'F'},
-    {value: 'G'},
-    {value: 'H'},
-    {value: 'J'},
-    {value: 'K'},
-    {value: 'L'},
-    {value: ';'},
-    {value: '\u2019'},
-    {value: 'Enter'},
-    {value: 'Shift'},
-    {value: '\u005C'},
-    {value: 'Z'},
-    {value: 'X'},
-    {value: 'C'},
-    {value: 'V'},
-    {value: 'B'},
-    {value: 'N'},
-    {value: 'M'},
-    {value: ','},
-    {value: '.'},
-    {value: '/'},
-    {value: '\u2191'},
-    {value: 'Shift'},
-    {value: 'Ctrl'},
-    {value: 'Win'},
-    {value: 'Alt'},
-    {value: 'Space'},
-    {value: 'Alt'},
-    {value: 'Ctrl'},
-    {value: '\u2190'},
-    {value: '\u2193'},
-    {value: '\u2192'}
+    {
+        main: '`',
+        shifted: '~'
+    },
+    {
+        main: '1',
+        shifted: '!'
+    },
+    {
+        main: '2',
+        shifted: '@'
+    },
+    {
+        main: '3',
+        shifted: '#'
+    },
+    {
+        main: '4',
+        shifted: '$'
+    },
+    {
+        main: '5',
+        shifted: '%'
+    },
+    {
+        main: '6',
+        shifted: '^'
+    },
+    {
+        main: '7',
+        shifted: '&'
+    },
+    {
+        main: '8',
+        shifted: '*'
+    },
+    {
+        main: '9',
+        shifted: '('
+    },
+    {
+        main: '0',
+        shifted: ')'
+    },
+    {
+        main: '-',
+        shifted: '_'
+    },
+    {
+        main: '=',
+        shifted: '+'
+    },
+    {
+        main: 'Backspace',
+        shifted: 'Backspace'
+    },
+    {
+        main: 'Tab',
+        shifted: 'Tab'
+    },
+    {
+        main: 'Q',
+        shifted: 'q'
+    },
+    {
+        main: 'W',
+        shifted: 'w'
+    },
+    {
+        main: 'E',
+        shifted: 'e'
+    },
+    {
+        main: 'R',
+        shifted: 'r'
+    },
+    {
+        main: 'T',
+        shifted: 't'
+    },
+    {
+        main: 'Y',
+        shifted: 'y'
+    },
+    {
+        main: 'U',
+        shifted: 'u'
+    },
+    {
+        main: 'I',
+        shifted: 'i'
+    },
+    {
+        main: 'O',
+        shifted: 'o'
+    },
+    {
+        main: 'P',
+        shifted: 'p'
+    },
+    {
+        main: '[',
+        shifted: '{'
+    },
+    {
+        main: ']',
+        shifted: '}'
+    },
+    {
+        main: '\u005C',
+        shifted: '|'
+    },
+    {
+        main: 'DEL',
+        shifted: 'DEL'
+    },
+    {
+        main: 'Caps Lock',
+        shifted: 'Caps Lock'
+    },
+    {
+        main: 'A',
+        shifted: 'a'
+    },
+    {
+        main: 'S',
+        shifted: 's'
+    },
+    {
+        main: 'D',
+        shifted: 'd'
+    },
+    {
+        main: 'F',
+        shifted: 'f'
+    },
+    {
+        main: 'G',
+        shifted: 'g'
+    },
+    {
+
+        main: 'H',
+        shifted: 'h'
+    },
+    {
+        main: 'J',
+        shifted: 'j'
+    },
+    {
+        main: 'K',
+        shifted: 'k'
+    },
+    {
+        main: 'L',
+        shifted: 'l'
+    },
+    {
+        main: ';',
+        shifted: ':'
+    },
+    {
+        main: "'",
+        shifted: '"'
+    },
+    {
+        main: 'Enter',
+        shifted: 'Enter'
+    },
+    {
+        main: 'Shift',
+        shifted: 'Shift'
+    },
+    {
+        main: '\u005C',
+        shifted: '\u005C'
+    },
+    {
+        main: 'Z',
+        shifted: 'z'
+    },
+    {
+        main: 'X',
+        shifted: 'x'
+    },
+    {
+        main: 'C',
+        shifted: 'c'
+    },
+    {
+        main: 'V',
+        shifted: 'v'
+    },
+    {
+        main: 'B',
+        shifted: 'b'
+    },
+    {
+        main: 'N',
+        shifted: 'n'
+    },
+    {
+        main: 'M',
+        shifted: 'm'
+    },
+    {
+        main: ',',
+        shifted: '<'
+    },
+    {
+        main: '.',
+        shifted: '>'
+    },
+    {
+        main: '/',
+        shifted: '?'
+    },
+    {
+        main: '\u2191',
+        shifted: '\u2191'
+    },
+    {
+        main: 'Shift',
+        shifted: 'Shift'
+    },
+    {
+        main: 'Ctrl',
+        shifted: 'Ctrl'
+    },
+    {
+        main: 'Win',
+        shifted: 'Win'
+    },
+    {
+        main: 'Alt',
+        shifted: 'Alt'
+    },
+    {
+        main: 'Space',
+        shifted: 'Space'
+    },
+    {
+        main: 'Alt',
+        shifted: 'Alt'
+    },
+    {
+        main: 'Ctrl',
+        shifted: 'Ctrl'
+    },
+    {
+        main: '\u2190',
+        shifted: '\u2190'
+    },
+    {
+        main: '\u2193',
+        shifted: '\u2193'
+    },
+    {
+        main: '\u2192',
+        shifted: '\u2192'
+    }
 ];
 
 window.onload = function() {
-    render(data);
+    renderMain(data);
+    renderShifted(data);
     keyboardEvent();
     mouseEvent();
 }
@@ -76,8 +273,9 @@ window.onload = function() {
 const body = document.querySelector('body');
 
 class Keyboard {
-    constructor(value) {
-        this.value = value;
+    constructor(main, shifted) {
+        this.main = main;
+        this.shifted = shifted;
     }
 
     generateKeyboard() {
@@ -98,64 +296,82 @@ class Keyboard {
         for (let i = 0; i < 14; i++) {
             keys1.push(document.createElement('div'));
             keys1[i].className = 'keys';
-            if (this.value[i] === 'Backspace') {
+            if (this.main[i] === 'Backspace') {
                 keys1[i].classList.add('backspace_key')
             }
-            keys1[i].innerText = `${this.value[i]}`;
-            keys1[i].setAttribute('key-value', this.value[i]);
-            keys1[i].setAttribute('lower-case', this.value[i].toLowerCase());
+            if (this.main[i] === 'Backspace') {
+                keys1[i].innerText = `${this.main[i]}`;   
+            } else {
+                keys1[i].innerText = `${this.main[i].toLowerCase()}`;
+            }
+            keys1[i].setAttribute('key-value', this.main[i]);
+            keys1[i].setAttribute('lower-case', this.main[i].toLowerCase());
 
             keys4.push(document.createElement('div'));
             keys4[i].className = 'keys';
-            if (this.value[i + 42] === 'Shift') {
-                keys4[i].classList.add('shift_key')
+            if (this.main[i + 42] === 'Shift') {
+                keys4[i].classList.add('shift_key');
+                keys4[i].innerText = `${this.main[i + 42]}`;
+            } else {
+                keys4[i].innerText = `${this.main[i + 42].toLowerCase()}`;
             }
-            keys4[i].innerText = `${this.value[i + 42]}`;
-            keys4[i].setAttribute('key-value', this.value[i + 42]);
-            keys4[i].setAttribute('lower-case', this.value[i + 42].toLowerCase());           
+            keys4[i].setAttribute('key-value', this.main[i + 42]);
+            keys4[i].setAttribute('lower-case', this.main[i + 42].toLowerCase());           
         }
 
         for (let i = 0; i < 15; i++) {
             keys2.push(document.createElement('div'));
             keys2[i].className = 'keys';
-            if (this.value[i + 14] === 'Tab') {
+            if (this.main[i + 14] === 'Tab') {
                 keys2[i].classList.add('tab_key')
-            } else if (this.value[i + 14] === 'DEL') {
+            } else if (this.main[i + 14] === 'DEL') {
                 keys2[i].classList.add('del_key')
             }
-            keys2[i].innerText = `${this.value[i + 14]}`;
-            keys2[i].setAttribute('key-value', this.value[i + 14]);
-            keys2[i].setAttribute('lower-case', this.value[i + 14].toLowerCase());
+            if (this.main[i + 14] === 'Tab' || this.main[i + 14] === 'DEL') {
+                keys2[i].innerText = `${this.main[i + 14]}`
+            } else {
+                keys2[i].innerText = `${this.main[i + 14].toLowerCase()}`;
+            }
+            keys2[i].setAttribute('key-value', this.main[i + 14]);
+            keys2[i].setAttribute('lower-case', this.main[i + 14].toLowerCase());
         }
 
         for (let i = 0; i < 13; i++) {
             keys3.push(document.createElement('div'));
             keys3[i].className = 'keys';
-            if (this.value[i + 29] === 'Caps Lock') {
-                keys3[i].classList.add('caps-lock_key')
-            } else if (this.value[i + 29] === 'Enter') {
-                keys3[i].classList.add('enter_key')
+            if (this.main[i + 29] === 'Caps Lock') {
+                keys3[i].classList.add('caps-lock_key');
+                keys3[i].innerText = `${this.main[i + 29]}`;
+            } else if (this.main[i + 29] === 'Enter') {
+                keys3[i].classList.add('enter_key');
+                keys3[i].innerText = `${this.main[i + 29]}`;
+            } else {
+                keys3[i].innerText = `${this.main[i + 29].toLowerCase()}`;
             }
-            keys3[i].innerText = `${this.value[i + 29]}`;
-            keys3[i].setAttribute('key-value', this.value[i + 29]);
-            keys3[i].setAttribute('lower-case', this.value[i + 29].toLowerCase());
+            keys3[i].setAttribute('key-value', this.main[i + 29]);
+            keys3[i].setAttribute('lower-case', this.main[i + 29].toLowerCase());
         }
 
         for (let i = 0; i < 9; i++) {
             keys5.push(document.createElement('div'));
             keys5[i].className = 'keys';
-            if (this.value[i + 56] === 'Ctrl') {
-                keys5[i].classList.add('ctrl_key')
-            } else if (this.value[i + 56] === 'Win') {
-                keys5[i].classList.add('win_key')
-            } else if (this.value[i + 56] === 'Alt') {
-                keys5[i].classList.add('alt_key')
-            } else if (this.value[i + 56] === 'Space') {
-                keys5[i].classList.add('space_key')
+            if (this.main[i + 56] === 'Ctrl') {
+                keys5[i].classList.add('ctrl_key');
+                keys5[i].innerText = `${this.main[i + 56]}`;
+            } else if (this.main[i + 56] === 'Win') {
+                keys5[i].classList.add('win_key');
+                keys5[i].innerText = `${this.main[i + 56]}`;
+            } else if (this.main[i + 56] === 'Alt') {
+                keys5[i].classList.add('alt_key');
+                keys5[i].innerText = `${this.main[i + 56]}`;
+            } else if (this.main[i + 56] === 'Space') {
+                keys5[i].classList.add('space_key');
+                keys5[i].innerText = `${this.main[i + 56]}`;
+            } else {
+                keys5[i].innerText = `${this.main[i + 56].toLowerCase()}`;
             }
-            keys5[i].innerText = `${this.value[i + 56]}`;
-            keys5[i].setAttribute('key-value', this.value[i + 56]);
-            keys5[i].setAttribute('lower-case', this.value[i + 56].toLowerCase());
+            keys5[i].setAttribute('key-value', this.main[i + 56]);
+            keys5[i].setAttribute('lower-case', this.main[i + 56].toLowerCase());
         }
 
         container.className = 'container';
@@ -196,6 +412,19 @@ class Keyboard {
 
     keystroke() {
         const keyButtons = document.querySelectorAll('.keys');
+        const capsButton = document.querySelector('.caps-lock_key');
+
+        const check = () => {
+            keyButtons.forEach(e => {     
+                if (e.innerText.length === 1) {
+                    if (Array.from(capsButton.classList).includes('active')) {
+                            e.innerText = e.innerText.toUpperCase();
+                    } else {
+                            e.innerText = e.innerText.toLowerCase();
+                    }
+                } 
+            })
+        } 
 
         window.addEventListener('keydown', (e) => {
             for (let i = 0; i < keyButtons.length; i++) {
@@ -207,6 +436,7 @@ class Keyboard {
                 }
                 if (e.code === 'CapsLock' &&  keyButtons[i].getAttribute('key-value') === 'Caps Lock') {
                     keyButtons[i].classList.toggle('active');
+                    check(); 
                 }
                 if ((e.code === 'ControlLeft' || e.code === 'ControlRight') &&  keyButtons[i].getAttribute('key-value') === 'Ctrl') {
                     keyButtons[i].classList.add('active');
@@ -235,7 +465,7 @@ class Keyboard {
             }
         });
 
-        window.addEventListener('keyup', function(e) {
+        window.addEventListener('keyup', (e) => {
             for (let i = 0; i < keyButtons.length; i++) {
                 if (e.key === keyButtons[i].getAttribute('key-value') || e.key == keyButtons[i].getAttribute('lower-case')) {
                     keyButtons[i].classList.remove('active');
@@ -269,6 +499,38 @@ class Keyboard {
                 }
             }
         });
+
+        window.addEventListener('keydown', (e) => {
+            if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
+                keyButtons.forEach((elem, index) => {
+                    if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 65) {
+                        elem.innerText = data[index]['shifted'];
+                    } else if (elem.innerText.length === 1 && index < 65) {
+                        if (elem.innerText.toUpperCase() === elem.innerText) {
+                            elem.innerText = elem.innerText.toLowerCase();
+                        } else {
+                            elem.innerText = elem.innerText.toUpperCase();
+                        }
+                    } 
+                })
+            }
+        })
+
+        window.addEventListener('keyup', (e) => {
+            if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
+                keyButtons.forEach((elem, index) => {
+                    if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 65) {
+                        elem.innerText = data[index]['main'];
+                    } else if (elem.innerText.length === 1 && index < 65) {
+                        if (elem.innerText.toUpperCase() === elem.innerText) {
+                            elem.innerText = elem.innerText.toLowerCase();
+                        } else {
+                            elem.innerText = elem.innerText.toUpperCase();
+                        }
+                    } 
+                })
+            }
+        })
     }
 
     mouseClick() {
@@ -280,59 +542,123 @@ class Keyboard {
         const winButton = document.querySelector('.win_key');
         const altButton = document.querySelectorAll('.alt_key');
         const input = document.querySelector('.input');
-        
-        
+         
         capsButton.addEventListener('click', (e) => {        
-            capsButton.classList.toggle('active'); 
+            capsButton.classList.toggle('active');
+            check(); 
         })
-        shiftButton.forEach((elem) => {
-            elem.addEventListener('click', (e) => {        
-                shiftButton.forEach((elem) => {
-                    elem.classList.toggle('active'); 
+
+        const check = () => {
+            keyButtons.forEach(e => {     
+                if (e.innerText.length === 1) {
+                    if (Array.from(capsButton.classList).includes('active')) {
+                            e.innerText = e.innerText.toUpperCase();
+                    } else {
+                            e.innerText = e.innerText.toLowerCase();
+                    }
+                } 
+            })
+        } 
+
+        shiftButton.forEach(e => {
+            e.addEventListener('mousedown', () => {
+                keyButtons.forEach((elem, index) => {
+                    if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 65) {
+                        elem.innerText = data[index]['shifted'];
+                    } else if (elem.innerText.length === 1 && index < 65) {
+                        if (elem.innerText.toUpperCase() === elem.innerText) {
+                            elem.innerText = elem.innerText.toLowerCase();
+                        } else {
+                            elem.innerText = elem.innerText.toUpperCase();
+                        }
+                    }
+                })
+            })
+
+            e.addEventListener('mouseup', () => {
+                keyButtons.forEach((elem, index) => {
+                    if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 65) {
+                        elem.innerText = data[index]['main'];
+                    } else if (elem.innerText.length === 1 && index < 65) {
+                        if (elem.innerText.toUpperCase() === elem.innerText) {
+                            elem.innerText = elem.innerText.toLowerCase();
+                        } else {
+                            elem.innerText = elem.innerText.toUpperCase();
+                        }
+                    } 
                 })
             })
         })
-        ctrlButton.forEach((elem) => {
-            elem.addEventListener('click', (e) => {        
-                ctrlButton.forEach((elem) => {
-                    elem.classList.toggle('active'); 
-                })
-            })
-        })
-        altButton.forEach((elem) => {
-            elem.addEventListener('click', (e) => {        
-                altButton.forEach((elem) => {
-                    elem.classList.toggle('active'); 
-                })
-            })
-        })
-        winButton.addEventListener('click', (e) => {        
-            winButton.classList.toggle('active'); 
-        })
+        
+        // shiftButton.forEach((elem) => {
+        //     elem.addEventListener('click', (e) => {        
+        //         shiftButton.forEach((elem) => {
+        //             elem.classList.toggle('active'); 
+        //         })
+        //     })
+        // })
+        // ctrlButton.forEach((elem) => {
+        //     elem.addEventListener('click', (e) => {        
+        //         ctrlButton.forEach((elem) => {
+        //             elem.classList.toggle('active'); 
+        //         })
+        //     })
+        // })
+        // altButton.forEach((elem) => {
+        //     elem.addEventListener('click', (e) => {        
+        //         altButton.forEach((elem) => {
+        //             elem.classList.toggle('active'); 
+        //         })
+        //     })
+        // })
+        // winButton.addEventListener('click', (e) => {        
+        //     winButton.classList.toggle('active'); 
+        // })
 
         window.addEventListener('mousedown', (e) => {
             
             for (let i = 0; i < keyButtons.length; i++) {
                 console.log()
-                if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && event.target.getAttribute('key-value') !== 'Caps Lock' && event.target.getAttribute('key-value') !== 'Shift' && event.target.getAttribute('key-value') !== 'Ctrl' && event.target.getAttribute('key-value') !== 'Win' && event.target.getAttribute('key-value') !== 'Alt' && event.target.getAttribute('key-value') !== 'Space' && event.target.getAttribute('key-value') !== 'Enter') {
+                if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && event.target.getAttribute('key-value') !== 'Caps Lock' && event.target.getAttribute('key-value') !== 'Shift' && event.target.getAttribute('key-value') !== 'Ctrl' && event.target.getAttribute('key-value') !== 'Alt' && event.target.getAttribute('key-value') !== 'Space' && event.target.getAttribute('key-value') !== 'Enter' && event.target.getAttribute('key-value') !== 'Backspace' && event.target.getAttribute('key-value') !== 'DEL') {
                     keyButtons[i].classList.add('active');
                     input.value += keyButtons[i].innerText;
                 }
-                if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && (event.target.getAttribute('key-value') === 'Space' || event.target.getAttribute('key-value') === 'Enter')) {
+                // Button Functions
+                if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && event.target.getAttribute('key-value') === 'Space') {
                     keyButtons[i].classList.add('active');
-                } 
-            }
-            if (event.which === 1 && event.target.getAttribute('key-value') === 'Space' && event.target.getAttribute('key-value') === 'Enter') {
-                input.value += ' ';
-            }  
+                    input.value += ' ';
+                }
+                if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && event.target.getAttribute('key-value') === 'Enter') {
+                    keyButtons[i].classList.add('active');
+                    input.value += '\n';
+                }
+                if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && event.target.getAttribute('key-value') === 'Backspace') {
+                    keyButtons[i].classList.add('active');
+                    input.value = input.value.toString().slice(0, -1);
+                }
+                if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && event.target.getAttribute('key-value') === 'Shift') {
+                    keyButtons[i].classList.add('active');
+                }
+                if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && event.target.getAttribute('key-value') === 'Ctrl') {
+                    keyButtons[i].classList.add('active');
+                }
+                if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && event.target.getAttribute('key-value') === 'Alt') {
+                    keyButtons[i].classList.add('active');
+                }
+                // if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && event.target.getAttribute('key-value') === 'DEL') {
+                //     keyButtons[i].classList.add('active');
+                //     input.value = input.value.toString().slice(input.value.length - 1, input.value.length);
+                // } 
+            } 
         })
 
         window.addEventListener('mouseup', (e) => {
             for (let i = 0; i < keyButtons.length; i++) {
                 // console.log()
-                if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && event.target.getAttribute('key-value') !== 'Caps Lock' && event.target.getAttribute('key-value') !== 'Shift' && event.target.getAttribute('key-value') !== 'Ctrl' && event.target.getAttribute('key-value') !== 'Win' && event.target.getAttribute('key-value') !== 'Alt') {
+                if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && event.target.getAttribute('key-value') !== 'Caps Lock') {
                     keyButtons[i].classList.remove('active');                             
                 }
+                // && event.target.getAttribute('key-value') !== 'Shift' && event.target.getAttribute('key-value') !== 'Ctrl' && event.target.getAttribute('key-value') !== 'Win' && event.target.getAttribute('key-value') !== 'Alt'
             }
         })
 
@@ -354,9 +680,15 @@ const mouseEvent = () => {
     return new Keyboard().mouseClick()
 }
 
-const render = (data) => {
+const renderMain = (data) => {
     return new Keyboard(data.map(e => {
-        return e['value']
+        return e['main']
+    })).generateKeyboard()    
+}
+
+const renderShifted = (data) => {
+    return new Keyboard(data.map(e => {
+        return e['shifted']
     })).generateKeyboard()    
 }
 
