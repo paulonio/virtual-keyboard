@@ -68,7 +68,8 @@ const data = [
 
 window.onload = function() {
     render(data);
-    keyboardEvent()
+    keyboardEvent();
+    mouseEvent();
 }
 
 // Class
@@ -80,7 +81,6 @@ class Keyboard {
     }
 
     generateKeyboard() {
-        // let template = '';
         let container = document.createElement('div');
         let textArrea = document.createElement('textarea');
         let keyboardContainer = document.createElement('div');
@@ -160,6 +160,8 @@ class Keyboard {
 
         container.className = 'container';
         textArrea.className = 'input';
+        textArrea.setAttribute('type', 'text');
+        textArrea.setAttribute('autofocus', true);
         keyboardContainer.className = 'keyboard__container';
         let rows = [row1, row2, row3, row4, row5];
         rows.forEach(e => {
@@ -194,9 +196,10 @@ class Keyboard {
 
     keystroke() {
         const keyButtons = document.querySelectorAll('.keys');
+
         window.addEventListener('keydown', (e) => {
             for (let i = 0; i < keyButtons.length; i++) {
-                if (e.key === keyButtons[i].getAttribute('key-value') || e.key == keyButtons[i].getAttribute('lower-case')) {           
+                if (e.key === keyButtons[i].getAttribute('key-value') || e.key === keyButtons[i].getAttribute('lower-case')) {           
                     keyButtons[i].classList.add('active');
                 }
                 if (e.code === keyButtons[i].getAttribute('key-value')) {
@@ -270,6 +273,74 @@ class Keyboard {
 
     mouseClick() {
         const keyButtons = document.querySelectorAll('.keys');
+        const tabButton = document.querySelector('.tab_key');
+        const capsButton = document.querySelector('.caps-lock_key');
+        const shiftButton = document.querySelectorAll('.shift_key');
+        const ctrlButton = document.querySelectorAll('.ctrl_key');
+        const winButton = document.querySelector('.win_key');
+        const altButton = document.querySelectorAll('.alt_key');
+        const input = document.querySelector('.input');
+        
+        
+        capsButton.addEventListener('click', (e) => {        
+            capsButton.classList.toggle('active'); 
+        })
+        shiftButton.forEach((elem) => {
+            elem.addEventListener('click', (e) => {        
+                shiftButton.forEach((elem) => {
+                    elem.classList.toggle('active'); 
+                })
+            })
+        })
+        ctrlButton.forEach((elem) => {
+            elem.addEventListener('click', (e) => {        
+                ctrlButton.forEach((elem) => {
+                    elem.classList.toggle('active'); 
+                })
+            })
+        })
+        altButton.forEach((elem) => {
+            elem.addEventListener('click', (e) => {        
+                altButton.forEach((elem) => {
+                    elem.classList.toggle('active'); 
+                })
+            })
+        })
+        winButton.addEventListener('click', (e) => {        
+            winButton.classList.toggle('active'); 
+        })
+
+        window.addEventListener('mousedown', (e) => {
+            
+            for (let i = 0; i < keyButtons.length; i++) {
+                console.log()
+                if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && event.target.getAttribute('key-value') !== 'Caps Lock' && event.target.getAttribute('key-value') !== 'Shift' && event.target.getAttribute('key-value') !== 'Ctrl' && event.target.getAttribute('key-value') !== 'Win' && event.target.getAttribute('key-value') !== 'Alt' && event.target.getAttribute('key-value') !== 'Space' && event.target.getAttribute('key-value') !== 'Enter') {
+                    keyButtons[i].classList.add('active');
+                    input.value += keyButtons[i].innerText;
+                }
+                if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && (event.target.getAttribute('key-value') === 'Space' || event.target.getAttribute('key-value') === 'Enter')) {
+                    keyButtons[i].classList.add('active');
+                } 
+            }
+            if (event.which === 1 && event.target.getAttribute('key-value') === 'Space' && event.target.getAttribute('key-value') === 'Enter') {
+                input.value += ' ';
+            }  
+        })
+
+        window.addEventListener('mouseup', (e) => {
+            for (let i = 0; i < keyButtons.length; i++) {
+                // console.log()
+                if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && event.target.getAttribute('key-value') !== 'Caps Lock' && event.target.getAttribute('key-value') !== 'Shift' && event.target.getAttribute('key-value') !== 'Ctrl' && event.target.getAttribute('key-value') !== 'Win' && event.target.getAttribute('key-value') !== 'Alt') {
+                    keyButtons[i].classList.remove('active');                             
+                }
+            }
+        })
+
+        window.addEventListener('click', (e) => {
+            tabButton.classList.remove('active');
+            input.focus();
+            console.log(input.innerText)
+        })
     }
     
 }
