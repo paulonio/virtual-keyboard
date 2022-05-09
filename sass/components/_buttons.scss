@@ -1,0 +1,49 @@
+.keys {
+    width: 60px;
+    height: 65px;
+    margin: 4px;
+    background-color: $color-button;
+    color: $color-text;
+    transition: border-radius .2s, background-color .2s;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+
+    &:hover {
+    background-color: $color-button-active-light;
+    cursor: pointer;
+    }
+
+    &.active {
+    background-color: $color-button-active;
+    color: $color-text-active;
+    transition: border-radius .2s, background-color .2s;
+    border-radius: 50px;
+    }
+}
+
+.backspace_key {
+    width: 136px;
+}
+
+.tab_key {
+    width: 63px;
+}
+
+.caps-lock_key {
+    width: 125px;
+}
+
+.enter_key {
+    width: 134px;
+}
+
+.shift_key {
+    width: 129px;
+}
+
+.space_key {
+    width: 401px;
+}

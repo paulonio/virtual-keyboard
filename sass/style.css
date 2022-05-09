@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.comment__text {
+  font-size: 32px;
+  margin-bottom: 32px;
+}
+
+.keyboard__container {
+  max-width: 1024px;
+  width: 100%;
+  background-color: #E5E5E5;
+}
+
+.row {
+  display: flex;
+}
+
+.keys {
+  width: 60px;
+  height: 65px;
+  margin: 4px;
+  background-color: #FFFFFF;
+  color: #1a1a1a;
+  transition: border-radius 0.2s, background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+.keys:hover {
+  background-color: #a1a1a1;
+  cursor: pointer;
+}
+.keys.active {
+  background-color: #4E4E4E;
+  color: #FFFFFF;
+  transition: border-radius 0.2s, background-color 0.2s;
+  border-radius: 50px;
+}
+
+.backspace_key {
+  width: 136px;
+}
+
+.tab_key {
+  width: 63px;
+}
+
+.caps-lock_key {
+  width: 125px;
+}
+
+.enter_key {
+  width: 134px;
+}
+
+.shift_key {
+  width: 129px;
+}
+
+.space_key {
+  width: 401px;
+}
+
+.input {
+  max-width: 1024px;
+  width: 100%;
+  height: 96px;
+  margin-bottom: 20px;
+  font-size: 32px;
+  resize: none;
+  padding-left: 8px;
+  line-height: 40px;
+  color: #1a1a1a;
+}
+
+/*# sourceMappingURL=style.css.map */
