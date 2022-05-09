@@ -710,6 +710,7 @@ class Keyboard {
                                 keyButtons.forEach((elem, index) => {
                                     elem.innerText = i18Obj[index]['rusMain'].toLowerCase(); 
                                 })
+                            check();
                             languageCheck();
                         }
                     })
@@ -722,6 +723,7 @@ class Keyboard {
                                 keyButtons.forEach((elem, index) => {
                                     elem.innerText = data[index]['main'].toLowerCase(); 
                                 })
+                            check();
                             languageCheck();
                         }
                     })
