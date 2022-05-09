@@ -817,10 +817,10 @@ class Keyboard {
         window.addEventListener('keydown', (e) => {
             if ((e.code === 'ShiftLeft' || e.code === 'ShiftRight') && e.repeat === false) {
                 keyButtons.forEach((elem, index) => {
-                    if (elem.innerText[0] === '`') {
-                        if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 64) {
+                    if (keyButtons[0].innerText === '`' || keyButtons[0].innerText === '~') {
+                        if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase()) {
                             elem.innerText = data[index]['shifted'];
-                        } else if (elem.innerText.length === 1 && index < 64) {
+                        } else if (elem.innerText.length === 1) {
                             if (elem.innerText.toUpperCase() === elem.innerText) {
                                 elem.innerText = elem.innerText.toLowerCase();
                             } else {
@@ -828,16 +828,16 @@ class Keyboard {
                             }
                         }
                     } else {
-                        if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 64) {
+                        if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase()) {
                             elem.innerText = i18Obj[index]['rusShifted'];
-                        } else if (elem.innerText.length === 1 && index < 64) {
+                        } else if (elem.innerText.length === 1) {
                             if (elem.innerText.toUpperCase() === elem.innerText) {
                                 elem.innerText = elem.innerText.toLowerCase();
                             } else {
                                 elem.innerText = elem.innerText.toUpperCase();
                             }
                         }
-                    }  
+                    }   
                 })
             }
             if (e.code === 'Tab') {
@@ -855,10 +855,10 @@ class Keyboard {
         window.addEventListener('keyup', (e) => {
             if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
                 keyButtons.forEach((elem, index) => {
-                    if (elem.innerText[0] === '`') {
-                        if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 64) {
+                    if (keyButtons[0].innerText === '`' || keyButtons[0].innerText === '~') {
+                        if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase()) {
                             elem.innerText = data[index]['main'];
-                        } else if (elem.innerText.length === 1 && index < 64) {
+                        } else if (elem.innerText.length === 1) {
                             if (elem.innerText.toUpperCase() === elem.innerText) {
                                 elem.innerText = elem.innerText.toLowerCase();
                             } else {
@@ -866,16 +866,16 @@ class Keyboard {
                             }
                         } 
                     } else {
-                        if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 64) {
+                        if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase()) {
                             elem.innerText = i18Obj[index]['rusMain'];
-                        } else if (elem.innerText.length === 1 && index < 64) {
+                        } else if (elem.innerText.length === 1) {
                             if (elem.innerText.toUpperCase() === elem.innerText) {
                                 elem.innerText = elem.innerText.toLowerCase();
                             } else {
                                 elem.innerText = elem.innerText.toUpperCase();
                             }
                         } 
-                    }  
+                    }   
                 })
             }
         });      
