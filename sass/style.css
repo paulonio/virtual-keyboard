@@ -32,17 +32,22 @@ body {
   height: 65px;
   margin: 4px;
   background-color: #FFFFFF;
-  color: #4E4E4E;
-  transition: 0.2s ease;
+  color: #1a1a1a;
+  transition: border-radius 0.2s, background-color 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
+  user-select: none;
 }
-
+.keys:hover {
+  background-color: #a1a1a1;
+  cursor: pointer;
+}
 .keys.active {
   background-color: #4E4E4E;
   color: #FFFFFF;
-  transition: 0.2s ease;
+  transition: border-radius 0.2s, background-color 0.2s;
+  border-radius: 50px;
 }
 
 .backspace_key {
@@ -62,11 +67,11 @@ body {
 }
 
 .shift_key {
-  width: 96px;
+  width: 129px;
 }
 
 .space_key {
-  width: 436px;
+  width: 401px;
 }
 
 .input {
@@ -78,7 +83,7 @@ body {
   resize: none;
   padding-left: 8px;
   line-height: 40px;
-  color: #4E4E4E;
+  color: #1a1a1a;
 }
 
 /*# sourceMappingURL=style.css.map */

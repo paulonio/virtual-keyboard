@@ -172,10 +172,10 @@ const data = [
         main: 'Shift',
         shifted: 'Shift'
     },
-    {
-        main: '\u005C',
-        shifted: '\u005C'
-    },
+    // {
+    //     main: '\u005C',
+    //     shifted: '\u005C'
+    // },
     {
         main: 'Z',
         shifted: 'z'
@@ -264,7 +264,6 @@ const data = [
 
 window.onload = function() {
     renderMain(data);
-    renderShifted(data);
     keyboardEvent();
     mouseEvent();
 }
@@ -307,16 +306,7 @@ class Keyboard {
             keys1[i].setAttribute('key-value', this.main[i]);
             keys1[i].setAttribute('lower-case', this.main[i].toLowerCase());
 
-            keys4.push(document.createElement('div'));
-            keys4[i].className = 'keys';
-            if (this.main[i + 42] === 'Shift') {
-                keys4[i].classList.add('shift_key');
-                keys4[i].innerText = `${this.main[i + 42]}`;
-            } else {
-                keys4[i].innerText = `${this.main[i + 42].toLowerCase()}`;
-            }
-            keys4[i].setAttribute('key-value', this.main[i + 42]);
-            keys4[i].setAttribute('lower-case', this.main[i + 42].toLowerCase());           
+                     
         }
 
         for (let i = 0; i < 15; i++) {
@@ -350,28 +340,39 @@ class Keyboard {
             }
             keys3[i].setAttribute('key-value', this.main[i + 29]);
             keys3[i].setAttribute('lower-case', this.main[i + 29].toLowerCase());
+
+            keys4.push(document.createElement('div'));
+            keys4[i].className = 'keys';
+            if (this.main[i + 42] === 'Shift') {
+                keys4[i].classList.add('shift_key');
+                keys4[i].innerText = `${this.main[i + 42]}`;
+            } else {
+                keys4[i].innerText = `${this.main[i + 42].toLowerCase()}`;
+            }
+            keys4[i].setAttribute('key-value', this.main[i + 42]);
+            keys4[i].setAttribute('lower-case', this.main[i + 42].toLowerCase());  
         }
 
         for (let i = 0; i < 9; i++) {
             keys5.push(document.createElement('div'));
             keys5[i].className = 'keys';
-            if (this.main[i + 56] === 'Ctrl') {
+            if (this.main[i + 55] === 'Ctrl') {
                 keys5[i].classList.add('ctrl_key');
-                keys5[i].innerText = `${this.main[i + 56]}`;
-            } else if (this.main[i + 56] === 'Win') {
+                keys5[i].innerText = `${this.main[i + 55]}`;
+            } else if (this.main[i + 55] === 'Win') {
                 keys5[i].classList.add('win_key');
-                keys5[i].innerText = `${this.main[i + 56]}`;
-            } else if (this.main[i + 56] === 'Alt') {
+                keys5[i].innerText = `${this.main[i + 55]}`;
+            } else if (this.main[i + 55] === 'Alt') {
                 keys5[i].classList.add('alt_key');
-                keys5[i].innerText = `${this.main[i + 56]}`;
-            } else if (this.main[i + 56] === 'Space') {
+                keys5[i].innerText = `${this.main[i + 55]}`;
+            } else if (this.main[i + 55] === 'Space') {
                 keys5[i].classList.add('space_key');
-                keys5[i].innerText = `${this.main[i + 56]}`;
+                keys5[i].innerText = `${this.main[i + 55]}`;
             } else {
-                keys5[i].innerText = `${this.main[i + 56].toLowerCase()}`;
+                keys5[i].innerText = `${this.main[i + 55].toLowerCase()}`;
             }
-            keys5[i].setAttribute('key-value', this.main[i + 56]);
-            keys5[i].setAttribute('lower-case', this.main[i + 56].toLowerCase());
+            keys5[i].setAttribute('key-value', this.main[i + 55]);
+            keys5[i].setAttribute('lower-case', this.main[i + 55].toLowerCase());
         }
 
         container.className = 'container';
@@ -413,6 +414,9 @@ class Keyboard {
     keystroke() {
         const keyButtons = document.querySelectorAll('.keys');
         const capsButton = document.querySelector('.caps-lock_key');
+        const winButton = document.querySelector('.win_key');
+        const tabButton = document.querySelector('.tab_key');
+        const input = document.querySelector('.input');
 
         const check = () => {
             keyButtons.forEach(e => {     
@@ -503,7 +507,7 @@ class Keyboard {
         window.addEventListener('keydown', (e) => {
             if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
                 keyButtons.forEach((elem, index) => {
-                    if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 65) {
+                    if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 64) {
                         elem.innerText = data[index]['shifted'];
                     } else if (elem.innerText.length === 1 && index < 65) {
                         if (elem.innerText.toUpperCase() === elem.innerText) {
@@ -514,12 +518,16 @@ class Keyboard {
                     } 
                 })
             }
+            if (e.code === 'Tab') {
+                e.preventDefault();
+                input.value += '    ';
+            }
         })
 
         window.addEventListener('keyup', (e) => {
             if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
                 keyButtons.forEach((elem, index) => {
-                    if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 65) {
+                    if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 64) {
                         elem.innerText = data[index]['main'];
                     } else if (elem.innerText.length === 1 && index < 65) {
                         if (elem.innerText.toUpperCase() === elem.innerText) {
@@ -539,7 +547,6 @@ class Keyboard {
         const capsButton = document.querySelector('.caps-lock_key');
         const shiftButton = document.querySelectorAll('.shift_key');
         const ctrlButton = document.querySelectorAll('.ctrl_key');
-        const winButton = document.querySelector('.win_key');
         const altButton = document.querySelectorAll('.alt_key');
         const input = document.querySelector('.input');
          
@@ -563,9 +570,9 @@ class Keyboard {
         shiftButton.forEach(e => {
             e.addEventListener('mousedown', () => {
                 keyButtons.forEach((elem, index) => {
-                    if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 65) {
+                    if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 64) {
                         elem.innerText = data[index]['shifted'];
-                    } else if (elem.innerText.length === 1 && index < 65) {
+                    } else if (elem.innerText.length === 1 && index < 64) {
                         if (elem.innerText.toUpperCase() === elem.innerText) {
                             elem.innerText = elem.innerText.toLowerCase();
                         } else {
@@ -577,9 +584,9 @@ class Keyboard {
 
             e.addEventListener('mouseup', () => {
                 keyButtons.forEach((elem, index) => {
-                    if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 65) {
+                    if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 64) {
                         elem.innerText = data[index]['main'];
-                    } else if (elem.innerText.length === 1 && index < 65) {
+                    } else if (elem.innerText.length === 1 && index < 64) {
                         if (elem.innerText.toUpperCase() === elem.innerText) {
                             elem.innerText = elem.innerText.toLowerCase();
                         } else {
@@ -589,37 +596,11 @@ class Keyboard {
                 })
             })
         })
-        
-        // shiftButton.forEach((elem) => {
-        //     elem.addEventListener('click', (e) => {        
-        //         shiftButton.forEach((elem) => {
-        //             elem.classList.toggle('active'); 
-        //         })
-        //     })
-        // })
-        // ctrlButton.forEach((elem) => {
-        //     elem.addEventListener('click', (e) => {        
-        //         ctrlButton.forEach((elem) => {
-        //             elem.classList.toggle('active'); 
-        //         })
-        //     })
-        // })
-        // altButton.forEach((elem) => {
-        //     elem.addEventListener('click', (e) => {        
-        //         altButton.forEach((elem) => {
-        //             elem.classList.toggle('active'); 
-        //         })
-        //     })
-        // })
-        // winButton.addEventListener('click', (e) => {        
-        //     winButton.classList.toggle('active'); 
-        // })
 
         window.addEventListener('mousedown', (e) => {
             
-            for (let i = 0; i < keyButtons.length; i++) {
-                console.log()
-                if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && event.target.getAttribute('key-value') !== 'Caps Lock' && event.target.getAttribute('key-value') !== 'Shift' && event.target.getAttribute('key-value') !== 'Ctrl' && event.target.getAttribute('key-value') !== 'Alt' && event.target.getAttribute('key-value') !== 'Space' && event.target.getAttribute('key-value') !== 'Enter' && event.target.getAttribute('key-value') !== 'Backspace' && event.target.getAttribute('key-value') !== 'DEL') {
+            for (let i = 0; i < 64; i++) {
+                if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && event.target.getAttribute('key-value') !== 'Caps Lock' && event.target.getAttribute('key-value') !== 'Shift' && event.target.getAttribute('key-value') !== 'Ctrl' && event.target.getAttribute('key-value') !== 'Alt' && event.target.getAttribute('key-value') !== 'Space' && event.target.getAttribute('key-value') !== 'Enter' && event.target.getAttribute('key-value') !== 'Backspace' && event.target.getAttribute('key-value') !== 'DEL' && event.target.getAttribute('key-value') !== 'Win' && event.target.getAttribute('key-value') !== 'Tab') {
                     keyButtons[i].classList.add('active');
                     input.value += keyButtons[i].innerText;
                 }
@@ -645,27 +626,27 @@ class Keyboard {
                 if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && event.target.getAttribute('key-value') === 'Alt') {
                     keyButtons[i].classList.add('active');
                 }
-                // if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && event.target.getAttribute('key-value') === 'DEL') {
-                //     keyButtons[i].classList.add('active');
-                //     input.value = input.value.toString().slice(input.value.length - 1, input.value.length);
-                // } 
+                if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && event.target.getAttribute('key-value') === 'Win') {
+                    keyButtons[i].classList.add('active');
+                }
+                if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && event.target.getAttribute('key-value') === 'Tab') {
+                    keyButtons[i].classList.add('active');
+                    input.value += '    ';
+                }
             } 
         })
 
         window.addEventListener('mouseup', (e) => {
             for (let i = 0; i < keyButtons.length; i++) {
-                // console.log()
                 if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && event.target.getAttribute('key-value') !== 'Caps Lock') {
                     keyButtons[i].classList.remove('active');                             
                 }
-                // && event.target.getAttribute('key-value') !== 'Shift' && event.target.getAttribute('key-value') !== 'Ctrl' && event.target.getAttribute('key-value') !== 'Win' && event.target.getAttribute('key-value') !== 'Alt'
             }
         })
 
         window.addEventListener('click', (e) => {
             tabButton.classList.remove('active');
             input.focus();
-            console.log(input.innerText)
         })
     }
     
@@ -686,21 +667,8 @@ const renderMain = (data) => {
     })).generateKeyboard()    
 }
 
-const renderShifted = (data) => {
-    return new Keyboard(data.map(e => {
-        return e['shifted']
-    })).generateKeyboard()    
-}
-
-// Window Events
-// window.addEventListener('keydown', keyboardEvent);
-
-// let divs = data.map((e, i) => {
-//     return e['value']
-// })
-
-
-
-// window.addEventListener('keydown', (e) => {
-
-// })
+// const renderShifted = (data) => {
+//     return new Keyboard(data.map(e => {
+//         return e['shifted']
+//     })).generateKeyboard()    
+// }

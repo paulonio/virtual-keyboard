@@ -4,17 +4,24 @@
     margin: 4px;
     background-color: $color-button;
     color: $color-text;
-    transition: .2s ease;
+    transition: border-radius .2s, background-color .2s;
     
     display: flex;
     align-items: center;
     justify-content: center;
-}
+    user-select: none;
 
-.keys.active {
+    &:hover {
+    background-color: $color-button-active-light;
+    cursor: pointer;
+    }
+
+    &.active {
     background-color: $color-button-active;
     color: $color-text-active;
-    transition: .2s ease;
+    transition: border-radius .2s, background-color .2s;
+    border-radius: 50px;
+    }
 }
 
 .backspace_key {
@@ -34,11 +41,9 @@
 }
 
 .shift_key {
-    width: 96px;
+    width: 129px;
 }
 
-
-
 .space_key {
-    width: 436px;
+    width: 401px;
 }
