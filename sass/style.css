@@ -17,6 +17,11 @@ body {
   margin: 0 auto;
 }
 
+.comment__text {
+  font-size: 32px;
+  margin-bottom: 32px;
+}
+
 .keyboard__container {
   max-width: 1024px;
   width: 100%;

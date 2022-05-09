@@ -1,3 +1,262 @@
+const i18Obj = [
+    {
+        rusMain: 'Ё',
+        rusShifted: 'ё'
+    },
+    {
+        rusMain: '1',
+        rusShifted: '!'
+    },
+    {
+        rusMain: '2',
+        rusShifted: '"'
+    },
+    {
+        rusMain: '3',
+        rusShifted: '№'
+    },
+    {
+        rusMain: '4',
+        rusShifted: ';'
+    },
+    {
+        rusMain: '5',
+        rusShifted: '%'
+    },
+    {
+        rusMain: '6',
+        rusShifted: ':'
+    },
+    {
+        rusMain: '7',
+        rusShifted: '?'
+    },
+    {
+        rusMain: '8',
+        rusShifted: '*'
+    },
+    {
+        rusMain: '9',
+        rusShifted: '('
+    },
+    {
+        rusMain: '0',
+        rusShifted: ')'
+    },
+    {
+        rusMain: '-',
+        rusShifted: '_'
+    },
+    {
+        rusMain: '=',
+        rusShifted: '+'
+    },
+    {
+        rusMain: 'Backspace',
+        rusShifted: 'Backspace'
+    },
+    {
+        rusMain: 'Tab',
+        rusShifted: 'Tab'
+    },
+    {
+        rusMain: 'Й',
+        rusShifted: 'й'
+    },
+    {
+        rusMain: 'Ц',
+        rusShifted: 'ц'
+    },
+    {
+        rusMain: 'У',
+        rusShifted: 'у'
+    },
+    {
+        rusMain: 'К',
+        rusShifted: 'к'
+    },
+    {
+        rusMain: 'Е',
+        rusShifted: 'е'
+    },
+    {
+        rusMain: 'Н',
+        rusShifted: 'н'
+    },
+    {
+        rusMain: 'Г',
+        rusShifted: 'г'
+    },
+    {
+        rusMain: 'Ш',
+        rusShifted: 'ш'
+    },
+    {
+        rusMain: 'Щ',
+        rusShifted: 'щ'
+    },
+    {
+        rusMain: 'З',
+        rusShifted: 'з'
+    },
+    {
+        rusMain: 'Х',
+        rusShifted: 'х'
+    },
+    {
+        rusMain: 'Ъ',
+        rusShifted: 'ъ'
+    },
+    {
+        rusMain: '\u005C',
+        rusShifted: '/'
+    },
+    {
+        rusMain: 'DEL',
+        rusShifted: 'DEL'
+    },
+    {
+        rusMain: 'Caps Lock',
+        rusShifted: 'Caps Lock'
+    },
+    {
+        rusMain: 'Ф',
+        rusShifted: 'ф'
+    },
+    {
+        rusMain: 'Ы',
+        rusShifted: 'ы'
+    },
+    {
+        rusMain: 'В',
+        rusShifted: 'в'
+    },
+    {
+        rusMain: 'А',
+        rusShifted: 'а'
+    },
+    {
+        rusMain: 'П',
+        rusShifted: 'п'
+    },
+    {
+        rusMain: 'Р',
+        rusShifted: 'р'
+    },
+    {
+        rusMain: 'О',
+        rusShifted: 'о'
+    },
+    {
+        rusMain: 'Л',
+        rusShifted: 'л'
+    },
+    {
+        rusMain: 'Д',
+        rusShifted: 'д'
+    },
+    {
+        rusMain: 'Ж',
+        rusShifted: 'ж'
+    },
+    {
+        rusMain: 'Э',
+        rusShifted: 'э'
+    },
+    {
+        rusMain: 'Enter',
+        rusShifted: 'Enter'
+    },
+    {
+        rusMain: 'Shift',
+        rusShifted: 'Shift'
+    },
+    {
+        rusMain: 'Я',
+        rusShifted: 'я'
+    },
+    {
+        rusMain: 'Ч',
+        rusShifted: 'ч'
+    },
+    {
+        rusMain: 'С',
+        rusShifted: 'с'
+    },
+    {
+        rusMain: 'М',
+        rusShifted: 'м'
+    },
+    {
+        rusMain: 'И',
+        rusShifted: 'и'
+    },
+    {
+        rusMain: 'Т',
+        rusShifted: 'т'
+    },
+    {
+        rusMain: 'Ь',
+        rusShifted: 'ь'
+    },
+    {
+        rusMain: 'Б',
+        rusShifted: 'б'
+    },
+    {
+        rusMain: 'Ю',
+        rusShifted: 'ю'
+    },
+    {
+        rusMain: '.',
+        rusShifted: ','
+    },
+    {
+        rusMain: '\u2191',
+        rusShifted: '\u2191'
+    },
+    {
+        rusMain: 'Shift',
+        rusShifted: 'Shift'
+    },
+    {
+        rusMain: 'Ctrl',
+        rusShifted: 'Ctrl'
+    },
+    {
+        rusMain: 'Win',
+        rusShifted: 'Win'
+    },
+    {
+        rusMain: 'Alt',
+        rusShifted: 'Alt'
+    },
+    {
+        rusMain: 'Space',
+        rusShifted: 'Space'
+    },
+    {
+        rusMain: 'Alt',
+        rusShifted: 'Alt'
+    },
+    {
+        rusMain: 'Ctrl',
+        rusShifted: 'Ctrl'
+    },
+    {
+        rusMain: '\u2190',
+        rusShifted: '\u2190'
+    },
+    {
+        rusMain: '\u2193',
+        rusShifted: '\u2193'
+    },
+    {
+        rusMain: '\u2192',
+        rusShifted: '\u2192'
+    }
+];
+
 const data = [ 
     {
         main: '`',
@@ -172,10 +431,6 @@ const data = [
         main: 'Shift',
         shifted: 'Shift'
     },
-    // {
-    //     main: '\u005C',
-    //     shifted: '\u005C'
-    // },
     {
         main: 'Z',
         shifted: 'z'
@@ -279,6 +534,7 @@ class Keyboard {
 
     generateKeyboard() {
         let container = document.createElement('div');
+        let comment = document.createElement('div');
         let textArrea = document.createElement('textarea');
         let keyboardContainer = document.createElement('div');
         let row1 = document.createElement('div');
@@ -376,6 +632,7 @@ class Keyboard {
         }
 
         container.className = 'container';
+        comment.className = 'comment__text';
         textArrea.className = 'input';
         textArrea.setAttribute('type', 'text');
         textArrea.setAttribute('autofocus', true);
@@ -385,7 +642,10 @@ class Keyboard {
             e.className = 'row';
         })
 
+        comment.innerText = 'Для переключения языка комбинация: левый Ctrl + левый Alt.'
+
         body.append(container);
+        container.append(comment);
         container.append(textArrea);
         container.append(keyboardContainer);
 
@@ -414,10 +674,9 @@ class Keyboard {
     keystroke() {
         const keyButtons = document.querySelectorAll('.keys');
         const capsButton = document.querySelector('.caps-lock_key');
-        const winButton = document.querySelector('.win_key');
-        const tabButton = document.querySelector('.tab_key');
         const input = document.querySelector('.input');
-
+        let isEnglish = true;
+ 
         const check = () => {
             keyButtons.forEach(e => {     
                 if (e.innerText.length === 1) {
@@ -428,17 +687,67 @@ class Keyboard {
                     }
                 } 
             })
-        } 
+        };
+
+        const setLanguage = () => {
+            let data = localStorage.getItem('isEnglish');
+            if (data === false.toString()) {
+                keyButtons.forEach((elem, index) => {
+                    elem.innerText = i18Obj[index]['rusMain'].toLowerCase();
+                    isEnglish = false; 
+                })
+            }
+        }
+
+        setLanguage();
+
+        window.addEventListener('keydown', (e) => {
+            if (keyButtons[0].innerText === '`' || keyButtons[0].innerText === '~') {
+                if (e.code === 'AltLeft') {
+                    window.addEventListener('keyup', (e) => {
+                        if (e.code === 'ControlLeft') {
+                            isEnglish = false;
+                                keyButtons.forEach((elem, index) => {
+                                    elem.innerText = i18Obj[index]['rusMain'].toLowerCase(); 
+                                })
+                            languageCheck();
+                        }
+                    })
+                }
+            } else {
+                if (e.code === 'AltLeft') {
+                    window.addEventListener('keyup', (e) => {
+                        if (e.code === 'ControlLeft') {
+                            isEnglish = true;
+                                keyButtons.forEach((elem, index) => {
+                                    elem.innerText = data[index]['main'].toLowerCase(); 
+                                })
+                            languageCheck();
+                        }
+                    })
+                }
+            }
+        })
+
+        const languageCheck = () => {
+            localStorage.setItem('isEnglish', isEnglish)
+        };
 
         window.addEventListener('keydown', (e) => {
             for (let i = 0; i < keyButtons.length; i++) {
                 if (e.key === keyButtons[i].getAttribute('key-value') || e.key === keyButtons[i].getAttribute('lower-case')) {           
                     keyButtons[i].classList.add('active');
                 }
+                if (e.code === 'AltLeft' &&  keyButtons[i].getAttribute('key-value') === 'Alt') {
+                    keyButtons[i].classList.add('active');
+                }
+                if (e.code === 'AltRight' &&  keyButtons[i].getAttribute('key-value') === 'Alt') {
+                    keyButtons[i].classList.add('active');
+                }
                 if (e.code === keyButtons[i].getAttribute('key-value')) {
                     keyButtons[i].classList.add('active');
                 }
-                if (e.code === 'CapsLock' &&  keyButtons[i].getAttribute('key-value') === 'Caps Lock') {
+                if ((e.code === 'CapsLock' &&  keyButtons[i].getAttribute('key-value') === 'Caps Lock') && e.repeat === false)  {
                     keyButtons[i].classList.toggle('active');
                     check(); 
                 }
@@ -503,42 +812,73 @@ class Keyboard {
                 }
             }
         });
+        
 
         window.addEventListener('keydown', (e) => {
-            if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
+            if ((e.code === 'ShiftLeft' || e.code === 'ShiftRight') && e.repeat === false) {
                 keyButtons.forEach((elem, index) => {
-                    if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 64) {
-                        elem.innerText = data[index]['shifted'];
-                    } else if (elem.innerText.length === 1 && index < 65) {
-                        if (elem.innerText.toUpperCase() === elem.innerText) {
-                            elem.innerText = elem.innerText.toLowerCase();
-                        } else {
-                            elem.innerText = elem.innerText.toUpperCase();
+                    if (elem.innerText[0] === '`') {
+                        if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 64) {
+                            elem.innerText = data[index]['shifted'];
+                        } else if (elem.innerText.length === 1 && index < 64) {
+                            if (elem.innerText.toUpperCase() === elem.innerText) {
+                                elem.innerText = elem.innerText.toLowerCase();
+                            } else {
+                                elem.innerText = elem.innerText.toUpperCase();
+                            }
                         }
-                    } 
+                    } else {
+                        if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 64) {
+                            elem.innerText = i18Obj[index]['rusShifted'];
+                        } else if (elem.innerText.length === 1 && index < 64) {
+                            if (elem.innerText.toUpperCase() === elem.innerText) {
+                                elem.innerText = elem.innerText.toLowerCase();
+                            } else {
+                                elem.innerText = elem.innerText.toUpperCase();
+                            }
+                        }
+                    }  
                 })
             }
             if (e.code === 'Tab') {
                 e.preventDefault();
                 input.value += '    ';
             }
-        })
+            if (e.code === 'ControlLeft' || e.code === 'ControlRight') {
+                e.preventDefault();
+            }
+            if (e.code === 'AltLeft' || e.code === 'AltRight') {
+                e.preventDefault();
+            }
+        });
 
         window.addEventListener('keyup', (e) => {
             if (e.code === 'ShiftLeft' || e.code === 'ShiftRight') {
                 keyButtons.forEach((elem, index) => {
-                    if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 64) {
-                        elem.innerText = data[index]['main'];
-                    } else if (elem.innerText.length === 1 && index < 65) {
-                        if (elem.innerText.toUpperCase() === elem.innerText) {
-                            elem.innerText = elem.innerText.toLowerCase();
-                        } else {
-                            elem.innerText = elem.innerText.toUpperCase();
-                        }
-                    } 
+                    if (elem.innerText[0] === '`') {
+                        if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 64) {
+                            elem.innerText = data[index]['main'];
+                        } else if (elem.innerText.length === 1 && index < 64) {
+                            if (elem.innerText.toUpperCase() === elem.innerText) {
+                                elem.innerText = elem.innerText.toLowerCase();
+                            } else {
+                                elem.innerText = elem.innerText.toUpperCase();
+                            }
+                        } 
+                    } else {
+                        if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 64) {
+                            elem.innerText = i18Obj[index]['rusMain'];
+                        } else if (elem.innerText.length === 1 && index < 64) {
+                            if (elem.innerText.toUpperCase() === elem.innerText) {
+                                elem.innerText = elem.innerText.toLowerCase();
+                            } else {
+                                elem.innerText = elem.innerText.toUpperCase();
+                            }
+                        } 
+                    }  
                 })
             }
-        })
+        });      
     }
 
     mouseClick() {
@@ -546,11 +886,10 @@ class Keyboard {
         const tabButton = document.querySelector('.tab_key');
         const capsButton = document.querySelector('.caps-lock_key');
         const shiftButton = document.querySelectorAll('.shift_key');
-        const ctrlButton = document.querySelectorAll('.ctrl_key');
-        const altButton = document.querySelectorAll('.alt_key');
         const input = document.querySelector('.input');
+
          
-        capsButton.addEventListener('click', (e) => {        
+        capsButton.addEventListener('click', () => {        
             capsButton.classList.toggle('active');
             check(); 
         })
@@ -570,34 +909,58 @@ class Keyboard {
         shiftButton.forEach(e => {
             e.addEventListener('mousedown', () => {
                 keyButtons.forEach((elem, index) => {
-                    if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 64) {
-                        elem.innerText = data[index]['shifted'];
-                    } else if (elem.innerText.length === 1 && index < 64) {
-                        if (elem.innerText.toUpperCase() === elem.innerText) {
-                            elem.innerText = elem.innerText.toLowerCase();
-                        } else {
-                            elem.innerText = elem.innerText.toUpperCase();
+                    if (keyButtons[0].innerText === '`' || keyButtons[0].innerText === '~') {
+                        if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase()) {
+                            elem.innerText = data[index]['shifted'];
+                        } else if (elem.innerText.length === 1) {
+                            if (elem.innerText.toUpperCase() === elem.innerText) {
+                                elem.innerText = elem.innerText.toLowerCase();
+                            } else {
+                                elem.innerText = elem.innerText.toUpperCase();
+                            }
                         }
-                    }
+                    } else {
+                        if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase()) {
+                            elem.innerText = i18Obj[index]['rusShifted'];
+                        } else if (elem.innerText.length === 1) {
+                            if (elem.innerText.toUpperCase() === elem.innerText) {
+                                elem.innerText = elem.innerText.toLowerCase();
+                            } else {
+                                elem.innerText = elem.innerText.toUpperCase();
+                            }
+                        }
+                    }  
                 })
             })
 
             e.addEventListener('mouseup', () => {
                 keyButtons.forEach((elem, index) => {
-                    if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase() && index < 64) {
-                        elem.innerText = data[index]['main'];
-                    } else if (elem.innerText.length === 1 && index < 64) {
-                        if (elem.innerText.toUpperCase() === elem.innerText) {
-                            elem.innerText = elem.innerText.toLowerCase();
-                        } else {
-                            elem.innerText = elem.innerText.toUpperCase();
-                        }
-                    } 
+                    if (keyButtons[0].innerText === '`' || keyButtons[0].innerText === '~') {
+                        if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase()) {
+                            elem.innerText = data[index]['main'];
+                        } else if (elem.innerText.length === 1) {
+                            if (elem.innerText.toUpperCase() === elem.innerText) {
+                                elem.innerText = elem.innerText.toLowerCase();
+                            } else {
+                                elem.innerText = elem.innerText.toUpperCase();
+                            }
+                        } 
+                    } else {
+                        if (elem.innerText.toLowerCase() === elem.innerText.toUpperCase()) {
+                            elem.innerText = i18Obj[index]['rusMain'];
+                        } else if (elem.innerText.length === 1) {
+                            if (elem.innerText.toUpperCase() === elem.innerText) {
+                                elem.innerText = elem.innerText.toLowerCase();
+                            } else {
+                                elem.innerText = elem.innerText.toUpperCase();
+                            }
+                        } 
+                    }  
                 })
             })
         })
 
-        window.addEventListener('mousedown', (e) => {
+        window.addEventListener('mousedown', () => {
             
             for (let i = 0; i < 64; i++) {
                 if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && event.target.getAttribute('key-value') !== 'Caps Lock' && event.target.getAttribute('key-value') !== 'Shift' && event.target.getAttribute('key-value') !== 'Ctrl' && event.target.getAttribute('key-value') !== 'Alt' && event.target.getAttribute('key-value') !== 'Space' && event.target.getAttribute('key-value') !== 'Enter' && event.target.getAttribute('key-value') !== 'Backspace' && event.target.getAttribute('key-value') !== 'DEL' && event.target.getAttribute('key-value') !== 'Win' && event.target.getAttribute('key-value') !== 'Tab') {
@@ -636,15 +999,23 @@ class Keyboard {
             } 
         })
 
-        window.addEventListener('mouseup', (e) => {
+        window.addEventListener('mouseup', () => {
             for (let i = 0; i < keyButtons.length; i++) {
                 if (event.which === 1 && event.target.getAttribute('key-value') === keyButtons[i].getAttribute('key-value') && event.target.getAttribute('key-value') !== 'Caps Lock') {
                     keyButtons[i].classList.remove('active');                             
-                }
+                }   
             }
+            //  if (event.which === 1) {
+            //         keyButtons.forEach((e, i) => {    
+            //             console.log([event.target.classList].includes('caps-lock_key'))   
+            //             if (![e.classList].includes('caps-lock_key')) {
+            //                 e.classList.remove('active');
+            //             } 
+            //         })
+            //     }
         })
 
-        window.addEventListener('click', (e) => {
+        window.addEventListener('click', () => {
             tabButton.classList.remove('active');
             input.focus();
         })
@@ -666,9 +1037,3 @@ const renderMain = (data) => {
         return e['main']
     })).generateKeyboard()    
 }
-
-// const renderShifted = (data) => {
-//     return new Keyboard(data.map(e => {
-//         return e['shifted']
-//     })).generateKeyboard()    
-// }
